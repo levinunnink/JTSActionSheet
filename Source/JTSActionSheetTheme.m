@@ -34,6 +34,7 @@
     theme.titleColor = JTSActionSheetDefaultTitleColor;
     theme.backdropShadowColor = JTSActionSheetDefaultBackdropShadowColor;
     theme.backgroundColor = JTSActionSheetDefaultBackgroundColor;
+    theme.cancelBackgroundColor = JTSActionSheetDefaultBackgroundColor;
     theme.separatorColor = JTSActionSheetDefaultSeparatorColor;
     theme.buttonHighlightOverlayColor = JTSActionSheetDefaultButtonHighlightOverlayColor;
     

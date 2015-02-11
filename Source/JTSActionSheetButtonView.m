@@ -92,6 +92,9 @@
         
         if (item.destructive) {
             [self.button setTitleColor:theme.destructiveButtonColor forState:UIControlStateNormal];
+        } else if(_isCancelItem) {
+            [self.button setTitleColor:theme.cancelButtonColor forState:UIControlStateNormal];
+            self.backgroundColor = theme.cancelBackgroundColor;
         } else {
             [self.button setTitleColor:theme.normalButtonColor forState:UIControlStateNormal];
         }

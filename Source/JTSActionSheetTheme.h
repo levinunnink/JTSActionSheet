@@ -26,12 +26,14 @@ typedef NS_ENUM(NSInteger, JTSActionSheetStyle) {
 @property (strong, nonatomic) UIColor *titleColor;
 @property (strong, nonatomic) UIColor *normalButtonColor;
 @property (strong, nonatomic) UIColor *destructiveButtonColor;
+@property (strong, nonatomic) UIColor *cancelButtonColor;
 
 @property (assign, nonatomic) CGFloat titleBaselineOffset;
 @property (assign, nonatomic) CGFloat normalButtonBaselineOffset;
 @property (assign, nonatomic) CGFloat boldButtonBaselineOffset;
 
 @property (strong, nonatomic) UIColor *backgroundColor; // Only with JTSActionSheetStyle_SolidColor backgrounds
+@property (strong, nonatomic) UIColor *cancelBackgroundColor; // Only with JTSActionSheetStyle_SolidColor backgrounds
 @property (strong, nonatomic) UIColor *separatorColor; // Only with JTSActionSheetStyle_SolidColor separators
 @property (strong, nonatomic) UIColor *buttonHighlightOverlayColor;
 @property (strong, nonatomic) UIColor *backdropShadowColor;
