@@ -99,7 +99,7 @@
             [self.button setTitleColor:theme.normalButtonColor forState:UIControlStateNormal];
         }
         
-        UIImage *highlightedImage = [JTSActionSheetImageUtility imageWithColor:theme.buttonHighlightOverlayColor];
+        UIImage *highlightedImage = [JTSActionSheetImageUtility imageWithColor: _isCancelItem ? theme.cancelButtonHighlightOverlayColor : theme.buttonHighlightOverlayColor];
         [self.button setBackgroundImage:highlightedImage forState:UIControlStateHighlighted];
         
         [self.button addTarget:self action:@selector(buttonTouchedUpInside:) forControlEvents:UIControlEventTouchUpInside];
