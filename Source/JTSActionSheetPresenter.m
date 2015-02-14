@@ -32,8 +32,7 @@
     
     NSAssert(self.currentViewController == nil, @"JTSActionSheet: trying to preset a second action sheet while another is visible.");
     
-    UIWindow *window = view.window;
-    UIViewController *rootVC = window.rootViewController;
+    UIViewController *rootVC = [self topMostController];
     NSAssert(rootVC, @"JTSActionSheet must be presented from a view with a window with a root view controller.");
     
     self.currentViewController = [[JTSActionSheetViewController alloc] initWithActionSheet:sheet];
@@ -60,5 +59,17 @@
         }
     }];
 }
+
+- (UIViewController*) topMostController
+{
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    
+    return topController;
+}
+
 
 @end
