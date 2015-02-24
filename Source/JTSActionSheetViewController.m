@@ -45,7 +45,7 @@
         UIViewAnimationOptions options = UIViewAnimationOptionAllowUserInteraction | 7 << 16; // unpublished default curve
         CGFloat duration = (animated) ? 0.5 : 0;
         
-        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.5 options:options animations:^{
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:-0.5 options:UIViewAnimationCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction  animations:^{
             //view.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
             self.sheet.transform = CGAffineTransformIdentity;
             //self.backdropShadowView.alpha = 1;
