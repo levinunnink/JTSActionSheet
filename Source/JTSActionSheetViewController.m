@@ -45,22 +45,12 @@
         UIViewAnimationOptions options = UIViewAnimationOptionAllowUserInteraction | 7 << 16; // unpublished default curve
         CGFloat duration = (animated) ? 0.3 : 0;
         
-        self.sheet.hideCancel = YES;
-        
-        [UIView animateWithDuration:duration delay:0 options:options animations:^{
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.5 options:options animations:^{
             //view.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
             self.sheet.transform = CGAffineTransformIdentity;
             //self.backdropShadowView.alpha = 1;
             [self.sheet addMotionEffects];
         } completion:nil];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.sheet.hideCancel = NO;
-            [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0.5 options:options animations:^{
-                [self.sheet layoutSubviews];
-            } completion:nil];
-        });
-
     }
 }
 
