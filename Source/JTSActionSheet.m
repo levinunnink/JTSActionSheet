@@ -27,7 +27,6 @@
 @property (strong, nonatomic) JTSActionSheetTitleView *titleView;
 @property (strong, nonatomic) NSArray *actionButtons;
 @property (strong, nonatomic) NSArray *actionButtonSeparators;
-@property (strong, nonatomic) JTSActionSheetButtonView *cancelButton;
 
 @end
 
@@ -98,6 +97,9 @@
 - (void)layoutSubviews {
     
     [super layoutSubviews];
+    
+    DMARK;
+    
     CGFloat cursor = self.bounds.size.height;
     CGFloat availableWidth = self.bounds.size.width;
     CGFloat buttonWidth = availableWidth - JTSActionSheetMargin * 2.0;
@@ -108,6 +110,7 @@
     CGRect cancelFrame = buttonBounds;
     cancelFrame.origin.x = JTSActionSheetMargin;
     cancelFrame.origin.y = cursor - JTSActionSheetMargin - buttonBounds.size.height;
+    
     self.cancelButton.frame = cancelFrame;
     
     // GAP BETWEEN CANCEL BUTTON AND ACTION BUTTONS
@@ -156,6 +159,13 @@
         titleViewRect.origin.x = buttonBounds.origin.x;
         titleViewRect.origin.y = cursor - titleViewRect.size.height;
         self.titleView.frame = titleViewRect;
+    }
+    
+    if (_hideCancel) {
+        DLOG(@"CHANGE BUTTON FRAME!");
+        CGFloat newY = self.cancelButton.frame.origin.y + JTSActionSheetMargin + self.cancelButton.height + self.cancelButton.height;
+        self.cancelButton.frame = (CGRect){self.cancelButton.frame.origin.x, newY, self.cancelButton.frame.size.width, self.cancelButton.frame.size.height};
+//        self.cancelButton.transform = CGAffineTransformMakeTranslation(0, self.cancelButton.height);
     }
 }
 
