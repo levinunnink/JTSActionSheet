@@ -43,7 +43,7 @@
     if (self.sheetIsVisible == NO) {
         self.sheetIsVisible = YES;
         UIViewAnimationOptions options = UIViewAnimationOptionAllowUserInteraction | 7 << 16; // unpublished default curve
-        CGFloat duration = (animated) ? 0.5 : 0;
+        CGFloat duration = (animated) ? 0.6 : 0;
         
         [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:-0.5 options:UIViewAnimationCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction  animations:^{
             //view.tintAdjustmentMode = UIViewTintAdjustmentModeDimmed;
